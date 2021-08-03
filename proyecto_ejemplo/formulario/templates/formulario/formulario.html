@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form method="post"> 
+        {% csrf_token %}
+        <label for="">Valor 1</label>
+        <input type="Text" name="operando1" value="0" size="12"> 
+        <br> 
+        <label for="">Valor 2</label>
+        <input type="Text" name="operando2" value="0" size="12"> 
+        <br> 
+        <label for="">Calculo</label>
+            <select name="opcion">
+                <option value="1">Sumar</option>
+                <option value="2">Restar</option>
+                <option value="3">Multiplicar</option>
+                <option value="4">Dividir</option>
+            </select>
+        <br> 
+        <button type="submit">Calcular</button>
+    
+    </form>
+</body>
+</html>
