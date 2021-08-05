@@ -5,10 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INDEX</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/miestilo.css' %}">
+
 </head>
 <body>
+    <img src="{% static 'img/logo.png' %}">
+    <p>{{time}}</p>
+    <p>{{timelocal}}</p>
+
     hola {{request.session.contador}}
-    <a href="/">GENERAR</a>
-    <a href="/reset">RESET</a>
+    <a href="{% url 'core:inicio' %}">GENERAR</a>
+    <a href="{% url 'core:reiniciar' %}">RESET</a>
+
+    <a href="/procesar/casa">Casa</a>
+    <a href="/procesar/granja">Granja</a>
+    <a href="/procesar/casino">Casino</a>
+    <a href="/procesar/cueva">Cueva</a>
+
+    <form action="/procesar" method="post">
+        <input type="hidden" name="opcion" value="casa">
+        <button type="submit">Procesar</button>
+    </form>
+
+    <form action="/procesar" method="post">
+        <input type="hidden" name="opcion" value="cueva">
+        <button type="submit">Procesar</button>
+    </form>
+
+    <form action="/procesar" method="post">
+        <input type="hidden" name="opcion" value="casa">
+        <button type="submit">Procesar</button>
+    </form>
+
+    <form action="/procesar" method="post">
+        <input type="hidden" name="opcion" value="casa">
+        <button type="submit">Procesar</button>
+    </form>
+
 </body>
 </html>

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/miestilo.css' %}">
+</head>
+<body>
+
+    <h1>Esto es un Ejemplo 1</h1>
+    <a href="/crear-datos">Crear Datos</a>
+    <a href="/vaciar-datos">Vaciar Datos</a>
+
+    <p>El contador dice: {{request.session.contador}}</p>
+
+    
+    <ul>
+        {% for log in request.session.logs %}
+            <li class="{{log.color}}"> {{log.texto}} ---- {{log.contador}}  ----- {{log.esPar}} ----- {{log.color}}---{{log.tiempo}}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
